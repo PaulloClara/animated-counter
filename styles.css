@@ -1,5 +1,6 @@
-html,
-body {
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+
+* {
   margin: 0;
   padding: 0;
 
@@ -7,5 +8,75 @@ body {
 }
 
 body {
-  background-image: url(assets/background.jpg);
+  height: 100vh;
+
+  display: flex;
+
+  flex-direction: column;
+  justify-content: flex-end;
+
+  color: white;
+  font-family: Roboto, sans-serif;
+
+  background-image: url("assets/background.jpg");
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1100px;
+
+  overflow: auto;
+}
+
+header {
+  height: 100%;
+
+  display: flex;
+  flex: 1;
+
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 60px;
+}
+
+main {
+  padding: 40px 20px;
+  border-top: 3px lightskyblue solid;
+
+  color: white;
+  background-color: #0f479ac0;
+}
+
+main .container {
+  display: grid;
+
+  grid-gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+
+  text-align: center;
+}
+
+.container i {
+  margin-bottom: 5px;
+  color: lightskyblue;
+}
+
+.container .counter {
+  margin: 10px 0;
+  font-size: 45px;
+}
+
+@media (max-width: 600px) {
+  main .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main .container > div:nth-of-type(1),
+  main .container > div:nth-of-type(2) {
+    padding-bottom: 20px;
+    border-bottom: 1px lightskyblue solid;
+  }
 }
